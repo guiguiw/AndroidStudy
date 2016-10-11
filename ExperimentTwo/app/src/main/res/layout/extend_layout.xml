@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/twentyDp"
+        android:textSize="@dimen/twentySp"
+        android:gravity="center"
+        android:text="@string/title"
+        android:textColor="@color/black"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/twentyDp"
+        android:layout_gravity="center"
+        android:src="@mipmap/sysu"/>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/more_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/tenDp">
+        <EditText
+            android:id="@+id/username2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:ems="20"
+            android:maxLines="1"
+            android:gravity="center"
+            android:inputType="textPersonName"
+            android:hint="@string/inputName"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/more_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/tenDp">
+        <EditText
+            android:id="@+id/password2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:ems="20"
+            android:maxLines="1"
+            android:gravity="center"
+            android:inputType="textPassword"
+            android:hint="@string/inputPassword"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <RadioGroup
+        android:id="@+id/radiogroup2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+        <RadioButton
+            android:id="@+id/student2"
+            android:checked="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/eighteenSp"
+            android:text="@string/student"
+            />
+        <RadioButton
+            android:id="@+id/teacher2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/tenDp"
+            android:textSize="18sp"
+            android:text="@string/teacher"
+            />
+        <RadioButton
+            android:id="@+id/club2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/tenDp"
+            android:textSize="18sp"
+            android:text="@string/club"
+            />
+        <RadioButton
+            android:id="@+id/admin2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/tenDp"
+            android:textSize="18sp"
+            android:text="@string/admin"
+            />
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/twentyDp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/login2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/buttoncolor"
+            android:textSize="18sp"
+            android:textColor="#FFFFFF"
+            android:text="@string/login"
+            />
+
+        <Button
+            android:id="@+id/register2"
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/buttoncolor"
+            android:textSize="18sp"
+            android:textColor="#FFFFFF"
+            android:text="@string/register"
+            />
+
+    </LinearLayout>
+
+
+
+
+
+
+</LinearLayout>

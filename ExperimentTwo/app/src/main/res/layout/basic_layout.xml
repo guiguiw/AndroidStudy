@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/twentyDp"
+        android:textSize="@dimen/twentySp"
+        android:gravity="center"
+        android:text="@string/title"
+        android:textColor="@color/black"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/twentyDp"
+        android:layout_gravity="center"
+        android:src="@mipmap/sysu"/>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/twentyDp">
+        <TableRow
+            android:paddingLeft="@dimen/twentyDp"
+            android:paddingRight="@dimen/twentyDp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:textColor="@color/black"
+                android:textSize="@dimen/eighteenSp"
+                android:text="@string/username"
+                />
+            <EditText
+                android:id="@+id/username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/eighteenSp"
+                android:maxLines="1"
+                android:ems="20"
+                android:hint="@string/inputName"
+                android:inputType="textPersonName" />
+        </TableRow>
+
+        <TableRow
+            android:paddingLeft="@dimen/twentyDp"
+            android:paddingRight="@dimen/twentyDp"
+            android:layout_marginTop="@dimen/tenDp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:textSize="@dimen/eighteenSp"
+                android:textColor="@color/black"
+                android:text="@string/password"
+                />
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/eighteenSp"
+                android:maxLines="1"
+                android:ems="20"
+                android:inputType="textPassword"
+                android:hint="@string/inputPassword"
+                />
+        </TableRow>
+    </TableLayout>
+
+    <RadioGroup
+        android:id="@+id/radiogroup1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+        <RadioButton
+            android:id="@+id/student"
+            android:checked="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/eighteenSp"
+            android:text="@string/student"
+            />
+        <RadioButton
+            android:id="@+id/teacher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/tenDp"
+            android:textSize="18sp"
+            android:text="@string/teacher"
+            />
+        <RadioButton
+            android:id="@+id/club"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/tenDp"
+            android:textSize="18sp"
+            android:text="@string/club"
+            />
+        <RadioButton
+            android:id="@+id/admin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/tenDp"
+            android:textSize="18sp"
+            android:text="@string/admin"
+            />
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/twentyDp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/buttoncolor"
+            android:textSize="18sp"
+            android:textColor="#FFFFFF"
+            android:text="@string/login"
+            />
+
+        <Button
+            android:id="@+id/register"
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/buttoncolor"
+            android:textSize="18sp"
+            android:textColor="#FFFFFF"
+            android:text="@string/register"
+            />
+
+    </LinearLayout>
+</LinearLayout>
