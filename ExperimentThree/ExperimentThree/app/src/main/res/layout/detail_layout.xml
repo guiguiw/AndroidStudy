@@ -106,7 +106,7 @@
                     android:layout_below="@id/bottomLine"
                     android:layout_marginTop="10dp"
                     android:text="更多资料"
-                    android:textSize="25sp"
+                    android:textSize="20sp"
                     android:textColor="#000000"/>
                 <View
                     android:id="@+id/thickLine"
@@ -116,64 +116,15 @@
                     android:layout_marginTop="10dp"
                     android:background="#1E000000"/>
         </RelativeLayout>
-        <ScrollView
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-                <LinearLayout
+                <ListView
+                    android:id="@+id/moreList"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="10dp">
-                        <TextView
-                            android:id="@+id/Edit"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/bottomLine"
-                            android:text="编辑联系人"
-                            android:textSize="25sp"
-                            android:textColor="#000000"/>
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="3dp"
-                            android:layout_marginTop="10dp"
-                            android:background="#1E000000"/>
-                        <TextView
-                            android:id="@+id/Share"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="分享联系人"
-                            android:textSize="25sp"
-                            android:textColor="#000000"/>
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="3dp"
-                            android:layout_marginTop="10dp"
-                            android:background="#1E000000"/>
-                        <TextView
-                            android:id="@+id/black"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="加入黑名单"
-                            android:textSize="25sp"
-                            android:textColor="#000000"/>
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="3dp"
-                            android:layout_marginTop="10dp"
-                            android:background="#1E000000"/>
-                        <TextView
-                            android:id="@+id/delete"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="删除联系人"
-                            android:textSize="25sp"
-                            android:textColor="#000000"/>
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="3dp"
-                            android:layout_marginTop="10dp"
-                            android:background="#1E000000"/>
-                </LinearLayout>
-        </ScrollView>
+                    android:layout_height="250dp"/>
+        </LinearLayout>
+
 
 </LinearLayout>

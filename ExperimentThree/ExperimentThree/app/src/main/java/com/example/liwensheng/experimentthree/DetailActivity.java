@@ -7,8 +7,15 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.RelativeLayout;
+import android.widget.SimpleAdapter;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by liWensheng on 16/10/11.
@@ -38,6 +45,20 @@ public class DetailActivity extends AppCompatActivity {
 
         TextView hometown = (TextView) findViewById(R.id.hometown);
         hometown.setText(home);
+
+
+        final List<Map<String, Object>> data = new ArrayList<>();
+        String[] Info = new  String[] {"编辑联系人", "分享联系人", "加入黑名单", "删除联系人"};
+        for (int i = 0; i < Info.length; i++) {
+            Map<String, Object> temp = new LinkedHashMap<>();
+            temp.put("info", Info[i]);
+            data.add(temp);
+        }
+        final ListView listview = (ListView)findViewById(R.id.moreList);
+        final SimpleAdapter simpleadapter = new SimpleAdapter(this, data, R.layout.detail_item,
+                new String[]{"info"}, new int[] {R.id.moreInfo});
+        listview.setAdapter(simpleadapter);
+
 
         clickStar();
         clickBack(intent);
