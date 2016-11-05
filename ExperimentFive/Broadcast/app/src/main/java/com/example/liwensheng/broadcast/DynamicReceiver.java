@@ -22,9 +22,10 @@ public class DynamicReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        RemoteViews rv = new RemoteViews(context.getPackageName(), R.layout.widget_demo);
+        RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.widget_demo);
 
         if(intent.getAction().equals(DYNAMICACTION))  {
+            //广播
             Bundle bundle = intent.getExtras();
             NotificationManager manager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
             Notification.Builder builder = new Notification.Builder(context);
@@ -41,15 +42,17 @@ public class DynamicReceiver extends BroadcastReceiver {
             Notification notify = builder.build();
             manager.notify(0, notify);
 
-            rv.setTextViewText(R.id.appwidget_text, bundle.getString("mes"));
-            rv.setImageViewResource(R.id.widgetImg, R.mipmap.dynamic);
+            //在widget显示内容
+            remoteViews.setTextViewText(R.id.appwidget_text, bundle.getString("mes"));
+            remoteViews.setImageViewResource(R.id.widgetImg, R.mipmap.dynamic);
 
-            Intent clickInt = new Intent(context, MainPageActivity.class);
-            PendingIntent pi = PendingIntent.getActivity(context, 0, clickInt, 0);
-            rv.setOnClickPendingIntent(R.id.widgetRelLayout, pi);
+            //点击图片跳回主界面
+            Intent intent1 = new Intent(context, MainPageActivity.class);
+            PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent1, 0);
+            remoteViews.setOnClickPendingIntent(R.id.widgetRelLayout, pendingIntent);
 
             AppWidgetManager.getInstance(context).updateAppWidget(new ComponentName(context.getApplicationContext(),
-                    WidgetDemo.class), rv);
+                    WidgetDemo.class), remoteViews);
         }
     }
 }

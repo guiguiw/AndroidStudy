@@ -34,6 +34,7 @@ public class WidgetDemo extends AppWidgetProvider {
         super.onUpdate(context, appWidgetManager, appWidgetIds);
         Intent intent = new Intent(context, MainPageActivity.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
+        //更新主屏幕view
         RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.widget_demo);
         remoteViews.setOnClickPendingIntent(R.id.widgetImg, pendingIntent);
         appWidgetManager.updateAppWidget(appWidgetIds, remoteViews);
@@ -56,12 +57,14 @@ public class WidgetDemo extends AppWidgetProvider {
         Bundle bundle = intent.getExtras();
 
         if (intent.getAction().equals(STATICATION)) {
+            //设置widget的显示内容
             remoteViews.setTextViewText(R.id.appwidget_text, bundle.getString("fruitName"));
             remoteViews.setImageViewResource(R.id.widgetImg, bundle.getInt("fruitImg"));
 
             Intent intent1  = new Intent(context, MainPageActivity.class);
             PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent1,0);
-            remoteViews.setOnClickPendingIntent(R.id.widgetRelLayout, pendingIntent);
+            //点击图片时会跳回主界面
+            remoteViews.setOnClickPendingIntent(R.id.widgetImg, pendingIntent);
 
             AppWidgetManager.getInstance(context).updateAppWidget(new ComponentName(context.getApplicationContext(),
                     WidgetDemo.class), remoteViews);
